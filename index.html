@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <p id="name">{{name}}</p>
+    <p k-text="name"></p>
+    <input type="text" k-model="name">
+    <button @click="changeName">呵呵</button>
+    <div k-html="html"></div>
+  </div>
+  <script src="wVue.js"></script>
+  <script src="compiler.js"></script>
+  <script>
+    const app = new KVue({
+      el:'#app',
+      data:{
+          name:'i am test',
+          foo:{
+            bar:'dear'
+          }
+      },
+      created(){
+        setTimeout(()=>{
+          this.name='思思'
+        }, 1000)
+      }
+    });
+  </script>
+</body>
+</html>
